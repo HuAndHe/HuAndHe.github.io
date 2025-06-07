@@ -7,7 +7,8 @@ import react from '@vitejs/plugin-react'
 const viteConfig=defineConfig(()=>{
   return{
     plugins: [react()],
-    base:'./'
+    base:'./',
+    extensions: ['.js','.mjs','.jsx','.css']
   }
 })
 
