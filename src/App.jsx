@@ -1,32 +1,26 @@
-import { useState } from 'react'
-import mainLog from '/coding.svg'
-import './App.css'
+import { useState, useEffect } from "react";
+import SideBar from "./SideBar";
+import Header from "./Header";
+const onMount = () => {
+  console.log("App is mounted");
+};
+const onUnmount = () => {
+  console.log("App is unmounted");
+};
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
+  useEffect(() => {
+    onMount();
+    return onUnmount();
+  }, []);
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={mainLog} className="logo" alt="Main" />
-        </a>
-       
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Header />
+      <SideBar />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
