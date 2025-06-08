@@ -20,10 +20,13 @@ function App() {
     <>
       <Header />
       <div className="grid grid-cols-10">
-          <div className="col-span-2"><SideBar/></div>
-          <div className="col-span-8"><Content/></div>
+        <div className="col-span-2">
+          <SideBar />
         </div>
-      <SideBar />
+        <div className="col-span-8">
+          <Content />
+        </div>
+      </div>
     </>
   );
 }
